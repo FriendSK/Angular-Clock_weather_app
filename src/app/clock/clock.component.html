@@ -1,5 +1,7 @@
-<div *ngIf="isFullFormat">
-  <p>{{date | date: 'shortTime'}}</p>
-</div>
-<div *ngIf="!isFullFormat">
-  <p>{{date | date: 'mediumTime'}}</p>
+<div class="clock">
+  <div *ngIf="isFullFormat">
+    <p>{{date | date: 'shortTime'}}</p>
+  </div>
+  <div *ngIf="!isFullFormat">
+    <p>{{date | date: 'mediumTime'}}</p>
+  </div>

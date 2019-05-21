@@ -1,6 +1,8 @@
-  <div  *ngIf="isEuDate">
+<div class="calendar">
+  <div *ngIf="isEuDate">
     <p>{{date | date: 'shortDate'}}</p>
   </div>
   <div *ngIf="!isEuDate">
     <p>{{date | date: 'mediumDate'}}</p>
   </div>
+</div>
