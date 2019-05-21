@@ -1,0 +1,6 @@
+  <div  *ngIf="isEuDate">
+    <p>{{date | date: 'shortDate'}}</p>
+  </div>
+  <div *ngIf="!isEuDate">
+    <p>{{date | date: 'mediumDate'}}</p>
+  </div>
