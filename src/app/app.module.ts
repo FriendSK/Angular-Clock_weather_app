@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { ClockComponent } from './clock/clock.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { DateService } from "./service/date.service";
-import { WeatherService } from "./service/weather.service";
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherComponent } from './weather/weather.component';
 
@@ -24,7 +23,7 @@ import { WeatherComponent } from './weather/weather.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [DateService, WeatherService],
+  providers: [DateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
