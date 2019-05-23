@@ -1,8 +1,8 @@
 <input type="text"  placeholder='Enter your city' [(ngModel)]="weatherService.city">
-<button (click)="weatherService.getWeather()">Get weather</button>
-<div class="weather" *ngIf="weatherService.response">
-  <p>Temperature: {{weatherService.response.main.temp - 273.15 | number : '1.1-1'}} &#176; C</p>
-  <p>Humidity: {{weatherService.response.main.humidity}} %</p>
-  <p>Cloudiness: {{weatherService.response.weather[0].description}}</p>
-  <p>Sunrise: {{weatherService.response.sys.sunrise * 1000 | date: 'hh:mm'}}</p>
+<button (click)="getWeatherByClick()">Get weather</button>
+<div class="weather" *ngIf="data">
+  <p>Temperature: {{data.temp - 273.15 | number : '1.1-1'}} &#176; C</p>
+  <p>Humidity: {{data.humidity}} %</p>
+  <p>Cloudiness: {{data.cloudiness}}</p>
+  <p>Sunrise: {{data.sunrise * 1000 | date: 'hh:mm'}}</p>
 </div>

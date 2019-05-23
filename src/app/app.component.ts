@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { DateService } from "./service/date.service";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,21 +6,27 @@ import { DateService } from "./service/date.service";
   styleUrls: ['./app.component.less']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   public date: Date;
   public isFullFormat: boolean = true;
   public isEuDate: boolean = true;
   public isClock: boolean = true;
- 
-  constructor(private dateService: DateService) {
 
-    setInterval(() => {
-      this.date = this.dateService.getDate();
+  constructor() {
+  }
+
+  ngOnInit() {
+  this.runApp();
+  }
+
+  private runApp () {
+      setInterval(() => {
+      this.date = new Date();
     }, 1000)
   }
 
-  leftClickFunc(): void {
+  public leftClickFunc(): void {
     if (this.isClock) {
       this.isFullFormat = !this.isFullFormat;
     } else {
@@ -29,14 +34,8 @@ export class AppComponent {
     }
   }
 
-  rightClickFunc(): void {
+  public rightClickFunc(): void {
     event.preventDefault();
     this.isClock = !this.isClock;
   }
-
-//   changeColor(): void {
-//     let color = Math.random().toString().substr(-6);
-//     this.color = `#${color}`;
-// }
-
 }

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { WeatherService } from "../service/weather.service";
+import { WeatherModel } from './models/weather.model'
 
 @Component({
   selector: 'app-weather',
@@ -8,9 +9,18 @@ import { WeatherService } from "../service/weather.service";
   providers: [WeatherService]
 })
 
-export class WeatherComponent  {
+export class WeatherComponent {
 
-  constructor(public weatherService: WeatherService) {
+  public data: any;
+
+  constructor(private weatherService: WeatherService) {
+  }
+  @Input() weather: WeatherModel;
+
+  public getWeatherByClick() {
+    this.weatherService.getWeather()
+      .subscribe((response) =>
+        this.data = new WeatherModel(response));
   }
 }
 
