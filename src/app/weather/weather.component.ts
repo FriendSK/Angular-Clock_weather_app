@@ -15,7 +15,6 @@ export class WeatherComponent {
 
   constructor(private weatherService: WeatherService) {
   }
-  @Input() weather: WeatherModel;
 
   public getWeatherByClick() {
     this.weatherService.getWeather()
